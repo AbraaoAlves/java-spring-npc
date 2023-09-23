@@ -1,0 +1,33 @@
+{
+  "name": "Java & PostgreSQL & NodeJS",
+  "image": "mcr.microsoft.com/devcontainers/java:0-17",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": true,
+      "installGradle": false
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    },
+    "ghcr.io/itsmechlark/features/postgresql:1": {
+      "version": "latest"
+    }
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "cweijan.vscode-postgresql-client2",
+        "GitHub.vscode-pull-request-github",
+        "vscjava.vscode-java-pack"
+      ],
+      "settings": {
+        "java.autobuild.enabled": true
+      }
+    }
+  }
+}
