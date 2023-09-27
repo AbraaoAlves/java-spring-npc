@@ -1,5 +1,18 @@
 
-# Application Architecture 
+# NPC Project
+
+## Get Starter (how to run the project)
+
+> run this project inside the configured container by `.devcontainer`. See [how to open this run this in your machine](https://code.visualstudio.com/docs/devcontainers/create-dev-container#_create-a-devcontainerjson-file) 
+
+or 
+
+> run this project using Github CodeSpace, clicking here:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/abraaoalves/java-spring-npc)
+
+
+## Application Architecture 
 
 ![Alt text](./image.png)
 
@@ -22,7 +35,9 @@ These are APIs that Spring Boot App will export:
 ## Technology
 
 - Java 17 / 11 / 8
+- Maven 3.9.4
 - Spring Boot 3 (with Spring Web MVC, Spring Data JPA)
-- Maven
+- NodeJS v20.6.1
+- Npm 9.8.1
 - React 18, Typescript 5, Vite 4
 - Postgres 16
