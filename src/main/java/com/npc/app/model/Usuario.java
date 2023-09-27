@@ -2,27 +2,13 @@ package com.npc.app.model;
 
 import java.util.Scanner;
 
-/*
- Mapear a class Usuario com os decorator do SpringData (anotations)
- Criar um static UsuarioSpecifications na pasta repository
- Criar um UsuariosRepository na pasta repository*/
-
-/*@ToString
-@EqualsAndHashCode
-@Setter
-@Getter
+/* Mapear a class Usuario com os decorator do SpringData (anotations)*/
 @Entity
-@NoArgsConstructor
 @Id
-@GeneratedValue*/
-
+@GeneratedValue
 public class Usuario {
 
-    /*
-     * Criar class de Usuario na pasta model com os campos: ID único, nome, endereço
-     * de e-mail, senha
-     */
-
+/*Criar class de Usuario na pasta model com os campos: ID único, nome, endereço de e-mail, senha*/
     private String id;
     private String name;
     private String email;
