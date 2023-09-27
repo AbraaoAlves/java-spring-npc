@@ -1,5 +1,7 @@
 package com.npc.app.repository;
 
-public class UsuariosRepository {
+@Repository
+public interface UsuariosRepository 
+    extends JpaRepository <Usuario, String>{
     
-}
+} 
