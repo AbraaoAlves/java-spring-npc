@@ -1,4 +1,5 @@
-package model;
+package com.npc.app.model;
+
 import java.util.Scanner;
 
 /*
@@ -6,23 +7,50 @@ import java.util.Scanner;
  Criar um static UsuarioSpecifications na pasta repository
  Criar um UsuariosRepository na pasta repository*/
 
+/*@ToString
+@EqualsAndHashCode
+@Setter
+@Getter
 @Entity
+@NoArgsConstructor
+@Id
+@GeneratedValue*/
+
 public class Usuario {
 
-@Id
-@GeneratedValue
-/*Criar class de Usuario na pasta model com os campos: ID único, nome, endereço de e-mail, senha*/
-private Long id;
-private String name;
-private String email;
-private string password;
+    /*
+     * Criar class de Usuario na pasta model com os campos: ID único, nome, endereço
+     * de e-mail, senha
+     */
 
-   /*Constructor.*/
+    private String id;
+    private String name;
+    private String email;
+    private String password;
 
-  public Usuario(String name, String email, string password) {
-   this.name = name;
-   this.email = email;
-   this.senha = password;
-  }
+    /* Constructor. */
+
+    public Usuario(String id, String name, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return "###########";
+    }
 
 }
