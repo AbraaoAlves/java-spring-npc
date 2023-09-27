@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "\n[JAVA]:"
+java -version  
+
+echo "\n[PSQL]:"
+psql --version   
+
+echo "\n[NODE]:"
+node -v  
+
+echo "\n[MAVEN]:"
+mvn -version  
+
+echo "\n[START POSTGRES]:"
+sudo /etc/init.d/postgresql start
+
+echo "\n[TRYING CREATE DB]:"
+createdb npc

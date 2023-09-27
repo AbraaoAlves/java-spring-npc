@@ -29,5 +29,6 @@
         "java.autobuild.enabled": true
       }
     }
-  }
+  },
+  "postCreateCommand": "sh start-dev"
 }
