@@ -1,30 +1,34 @@
 package com.npc.app.model;
 
-import java.util.Scanner;
+import java.util.UUID;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 /* Mapear a class Usuario com os decorator do SpringData (anotations)*/
 @Entity
-@Id
-@GeneratedValue
 public class Usuario {
-
-/*Criar class de Usuario na pasta model com os campos: ID único, nome, endereço de e-mail, senha*/
-    private String id;
+    
+    /*Criar class de Usuario na pasta model com os campos: ID único, nome, endereço de e-mail, senha*/
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private String name;
     private String email;
     private String password;
 
     /* Constructor. */
 
-    public Usuario(String id, String name, String email, String password) {
-        this.id = id;
+    public Usuario(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
     public String getId() {
-        return id;
+        return id.toString();
     }
 
     public String getName() {
