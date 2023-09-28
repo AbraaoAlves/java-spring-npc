@@ -19,6 +19,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "esbenp.prettier-vscode",
         "streetsidesoftware.code-spell-checker",
         "eamodio.gitlens",
         "cweijan.vscode-postgresql-client2",

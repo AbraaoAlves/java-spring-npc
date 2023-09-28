@@ -30,10 +30,11 @@ public class Usuario implements Serializable {
     @Column(name = "created_at", updatable = false)
     private Timestamp createdAt;
 
+    
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Timestamp updatedAt;
-
+    
     /* Constructor. */
     public Usuario(){}
     public Usuario(String name, String email, String password) {
@@ -57,8 +58,17 @@ public class Usuario implements Serializable {
     public String getPassword() {
         return "###########";
     }
-
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
+    }
+    
     public void setId(UUID id) {
         this.id = id;
+    }
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

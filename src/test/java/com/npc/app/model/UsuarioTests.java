@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class UsuarioTests {
     
     @Test
-    void verificaDados(){
+    void checkData(){
 		String name = "Abraao alves";
 		String email = "mail@mail.com";
 		String password = "12345";

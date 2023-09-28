@@ -76,6 +76,6 @@ public class UsuariosController {
     // validate if exist
 
     service.delete(id);
-    return ResponseEntity.status(HttpStatus.OK).body("User Deleted sucessfully."); 
+    return ResponseEntity.status(HttpStatus.OK).body("User Deleted successfully."); 
   }
 }
