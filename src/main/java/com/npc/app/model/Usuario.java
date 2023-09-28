@@ -1,26 +1,41 @@
 package com.npc.app.model;
 
+import java.io.Serializable;
 import java.util.UUID;
+import java.sql.Timestamp;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-/* Mapear a class Usuario com os decorator do SpringData (anotations)*/
 @Entity
-public class Usuario {
+@Table(name = "users")
+public class Usuario implements Serializable {
     
-    /*Criar class de Usuario na pasta model com os campos: ID único, nome, endereço de e-mail, senha*/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String name;
+    @Column(nullable = false, unique = true)
     private String email;
     private String password;
 
-    /* Constructor. */
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private Timestamp createdAt;
 
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private Timestamp updatedAt;
+
+    /* Constructor. */
+    public Usuario(){}
     public Usuario(String name, String email, String password) {
         this.name = name;
         this.email = email;
@@ -28,7 +43,7 @@ public class Usuario {
     }
 
     public String getId() {
-        return id.toString();
+        return id != null ? id.toString() : "";
     }
 
     public String getName() {
@@ -43,4 +58,7 @@ public class Usuario {
         return "###########";
     }
 
+    public void setId(UUID id) {
+        this.id = id;
+    }
 }
