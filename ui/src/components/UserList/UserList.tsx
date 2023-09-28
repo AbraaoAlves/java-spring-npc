@@ -1,4 +1,5 @@
 import React from 'react';
+import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
@@ -21,4 +22,15 @@ export const UserListItem: React.FC<Props> = (props) => {
           primary={props.name}
           secondary={props.email}/>
     </ListItem>
+}
+
+type ListProps = {
+  data: Array<Props>;
+}
+export const UserList: React.FC<ListProps> = (props) => {
+  return  <List  sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    {props.data.map((user) =>
+      <UserListItem name={user.name} email={user.email} />
+    )}
+  </List>
 }
