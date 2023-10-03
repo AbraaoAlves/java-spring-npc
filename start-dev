@@ -35,6 +35,9 @@ psql -d npc -f data.sql
 echo "\n[START SPRING AND VITE]:"
 
 mvn spring-boot:run & pids+=( "$!" )
-cd ui && npm run dev & pids+=( "$!" )
+cd ui 
+npm i 
+npm run dev & pids+=( "$!" )
+npm run storybook & pids+=( "$!" )
 
 wait # sleep until all background processes have exited, or a trap fires
