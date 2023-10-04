@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 export type Usuario = {
   id: string;
@@ -9,8 +10,11 @@ export type Usuario = {
 }
 
 
+
 export async function getUsuarios(){
-  return Promise.resolve([] as Array<Usuario>);  
+  const {data} = await axios.get<Array<Usuario>>('/api/users');
+
+  return data;  
 }
 
 export async function getUsuario(id: string){
