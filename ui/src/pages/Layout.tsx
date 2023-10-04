@@ -4,7 +4,9 @@ import ActiveNavLink from "../components/ActiveNavlink";
 import { Outlet } from "@mui/icons-material";
 import type { Usuario } from "../api";
 
-
+Layout.loader = () => {
+  
+}
 
 export default function Layout() {
 
@@ -57,5 +59,4 @@ export default function Layout() {
   );
 }
 
-Layout.otherProps = "";
 

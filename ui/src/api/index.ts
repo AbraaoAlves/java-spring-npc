@@ -10,26 +10,20 @@ export type Usuario = {
 }
 
 export async function getUsuarios(){
-  const {data} = await axios.get<Array<Usuario>>('/api/users');
-
-  return data;  
+  return axios.get<Array<Usuario>>('/api/users');  
 }
 
 export async function getUsuario(id: string){
-  const {data} = await axios.get<Usuario>('/api/users/' + id);
-  return data;  
+  return axios.get<Usuario>('/api/users/' + id)  
 }
 
 export async function createUsuario(user: Omit<Usuario, 'id'>){
-  const {data} = await axios.post<Usuario>('/api/users/', user);
-  
-  return data;  
+  return axios.post<Usuario>('/api/users/', user);
 }
 
 
 export async function updateUsuario(id: string, user: Partial<Omit<Usuario, 'id'>>){
-  const {data} = await axios.put<Usuario>('/api/users/'+id, user);
-  return data;  
+  return axios.put<Usuario>('/api/users/'+id, user);
 }
 
 export async function deleteUsuario(id: string){
