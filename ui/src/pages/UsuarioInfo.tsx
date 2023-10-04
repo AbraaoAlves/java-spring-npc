@@ -4,6 +4,7 @@ import { UserCard } from "../components/UserCard/UserCard";
 import Button from "@mui/material/Button";
 import { Usuario, getUsuario } from "../api";
 import "./UsuarioInfo.css";
+import Box from "@mui/material/Box";
 
 type Props = LoaderFunctionArgs<{ userId: string }>;
 UsuarioInfo.loader = ({ params }: Props) => getUsuario(`${params.userId}`);
@@ -14,13 +15,13 @@ export function UsuarioInfo() {
   if (!user) return "NOT FOUND";
 
   return (
-    <div>
+    <Box sx={{ pl: 2 }}>
       <UserCard
         id={user.id}
         name={user.name}
         email={user.email}
         createdAt={user.createdAt}
-        updateAt={user.updatedAt}
+        updatedAt={user.updatedAt}
       >
         <Form action="edit">
           {/** aqui o editar fará um redirect p a rota do UsuarioForm */}
@@ -44,10 +45,9 @@ export function UsuarioInfo() {
             type="submit"
           >
             Deletar
-          </Button>
-          ,
+          </Button>          
         </Form>
       </UserCard>
-    </div>
+    </Box>
   );
 }
