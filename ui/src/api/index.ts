@@ -9,8 +9,6 @@ export type Usuario = {
   updatedAt?: string;
 }
 
-
-
 export async function getUsuarios(){
   const {data} = await axios.get<Array<Usuario>>('/api/users');
 
@@ -18,23 +16,22 @@ export async function getUsuarios(){
 }
 
 export async function getUsuario(id: string){
-  console.log('id', id);
-  return Promise.resolve({} as Usuario);  
+  const {data} = await axios.get<Usuario>('/api/users/' + id);
+  return data;  
 }
 
 export async function createUsuario(user: Omit<Usuario, 'id'>){
-  console.log('user', user);
-  return Promise.resolve({} as Usuario);  
+  const {data} = await axios.post<Usuario>('/api/users/', user);
+  
+  return data;  
 }
 
 
 export async function updateUsuario(id: string, user: Partial<Omit<Usuario, 'id'>>){
-  console.log('id', id);
-  console.log('user', user);
-  return Promise.resolve({} as Usuario);  
+  const {data} = await axios.put<Usuario>('/api/users/'+id, user);
+  return data;  
 }
 
 export async function deleteUsuario(id: string){
-  console.log('id', id);
-  return Promise.resolve();  
+  await axios.delete<Usuario>('/api/users/'+id);
 }
