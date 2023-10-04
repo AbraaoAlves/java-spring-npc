@@ -1,5 +1,6 @@
 package com.npc.app.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -30,6 +31,10 @@ public class UsuariosService {
   
   public Page<Usuario> findAll(Pageable page) {
     return repo.findAll(page);
+  }
+
+  public List<Usuario> findAll() {
+    return repo.findAll();
   }
 
   @Transactional

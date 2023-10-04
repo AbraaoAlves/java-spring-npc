@@ -25,7 +25,7 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.users (
-    id uuid NOT NULL,
+    id INTEGER NOT NULL,
     created_at timestamp(6) without time zone,
     email character varying(255) NOT NULL,
     name character varying(255),
@@ -41,10 +41,10 @@ ALTER TABLE public.users OWNER TO postgres;
 --
 
 COPY public.users (id, created_at, email, name, password, updated_at) FROM stdin;
-f0d59053-e1e8-4ccc-ac6b-9f966ad50a53	2023-09-28 00:37:01.009727	fernanda@mail.com	fernanda	123	2023-09-28 00:37:01.009893
-95a56600-cc63-4a0d-94dd-78d80e9b3d54	2023-09-28 00:37:07.926237	kilvia@mail.com	kilvia	123	2023-09-28 00:37:07.926261
-c4947e5d-5e23-4b6f-bc7d-2a1b22f3900d	2023-09-28 00:37:17.980945	neydymar@mail.com	neydymar	123	2023-09-28 00:37:17.980965
-0f7aa303-46a6-4e71-8394-0d924abb277a	2023-09-28 00:37:36.91722	mail@mail.com	abraao	123	2023-09-28 00:37:36.917257
+1	2023-09-28 00:37:01.009727	fernanda@mail.com	fernanda	123	2023-09-28 00:37:01.009893
+2	2023-09-28 00:37:07.926237	kilvia@mail.com	kilvia	123	2023-09-28 00:37:07.926261
+3	2023-09-28 00:37:17.980945	neydymar@mail.com	neydymar	123	2023-09-28 00:37:17.980965
+4	2023-09-28 00:37:36.91722	mail@mail.com	abraao	123	2023-09-28 00:37:36.917257
 \.
 
 

@@ -35,13 +35,14 @@ public class UsuariosController {
     this.service = service;
   }
 
-  // http://localhost:8080/api/users/all
+  // GET http://localhost:8080/api/users
   @GetMapping()
   public ResponseEntity<Page<Usuario>> getAll(
       @PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
-    
+
       return ResponseEntity.status(HttpStatus.OK).body(service.findAll(pageable));
   }
+
 
   @GetMapping("/{id}")
   public ResponseEntity<Object> get(@PathVariable(value = "id") UUID id) {

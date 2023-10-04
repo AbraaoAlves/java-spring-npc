@@ -1,7 +1,6 @@
 package com.npc.app.model;
 
 import java.io.Serializable;
-import java.util.UUID;
 import java.sql.Timestamp;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -19,8 +18,8 @@ import jakarta.persistence.Table;
 public class Usuario implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int id;
     private String name;
     @Column(nullable = false, unique = true)
     private String email;
@@ -44,7 +43,7 @@ public class Usuario implements Serializable {
     }
 
     public String getId() {
-        return id != null ? id.toString() : "";
+        return id != 0 ? String.valueOf(id) : "";
     }
 
     public String getName() {
@@ -65,7 +64,7 @@ public class Usuario implements Serializable {
         return updatedAt;
     }
     
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
     public void setUpdatedAt(Timestamp updatedAt) {
