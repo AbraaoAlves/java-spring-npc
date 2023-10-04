@@ -1,17 +1,28 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { UserCard } from './UserCard';
+import { UserCard } from "./UserCard";
+import Button from "@mui/material/Button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'App/UserCard',
+  title: "App/UserCard",
   component: UserCard,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'fullscreen',
-  }
+    layout: "fullscreen",
+  },
+  args: {
+    children: [
+      <Button size="small" color="primary">
+        Editar
+      </Button>,
+      <Button size="small" variant="outlined" color="secondary">
+        Deletar
+      </Button>,
+    ],
+  },
 } satisfies Meta<typeof UserCard>;
 
 export default meta;
@@ -19,21 +30,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Fullscreen: Story = {
-  args:{
-    id: '1',
-    name:'abraao alves',
-    email: 'abraao@mail.com'
-  }
+  args: {
+    id: "1",
+    name: "abraao alves",
+    email: "abraao@mail.com",
+  },
 };
 
 export const Centered: Story = {
-  args:{
-    id: '2',
-    name:'kilvia santos',
-    email: 'kilvia@mail.com'
+  args: {
+    id: "2",
+    name: "kilvia santos",
+    email: "kilvia@mail.com",
   },
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'centered',
-  }
+    layout: "centered",
+  },
 };

@@ -12,7 +12,7 @@ Layout.action = async () => {
 }
 export default function Layout() {
 
-  const usuarios = useLoaderData() as Array<Usuario>;
+  const {data: usuarios} = useLoaderData() as {data: Array<Usuario> | null};
   const navigation = useNavigation();
 
   return (

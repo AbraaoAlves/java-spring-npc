@@ -8,7 +8,7 @@ import  Layout  from "./pages/Layout";
 import Index from "./pages";
 import { UsuarioInfo } from "./pages/UsuarioInfo";
 import { UsuarioForm } from "./pages/UsuarioForm";
-
+import {action as destroyAction} from './pages/destroy';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       {
         path: "users/:userId",
         element: <UsuarioInfo />,
-        // loader: contactLoader
+        loader: UsuarioInfo.loader
       },
       {
         path: "users/:userId/edit",

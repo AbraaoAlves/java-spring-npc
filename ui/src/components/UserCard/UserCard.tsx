@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   CardActions,
   Card,
   CardContent,
@@ -16,6 +15,7 @@ type Props = {
   email: string;
   createdAt?: string;
   updateAt?: string;
+  children: React.ReactNode; 
 };
 
 export const UserCard: React.FC<Props> = (props) => {
@@ -35,22 +35,18 @@ export const UserCard: React.FC<Props> = (props) => {
             <Divider variant="fullWidth" />
 
 
-            <Typography variant="body2" color="text.secondary">
+            <i>
               Criado em: {props.createdAt ?? ""}
-            </Typography>
+            </i>
 
-            <Typography variant="body2" color="text.secondary" >
+            <i>
               Atualizado em: {props.updateAt ?? ""}
-            </Typography>
+            </i>
 
           </CardContent>
-          <CardActions >
-            <Button size="small" color="primary">
-              Editar
-            </Button>
-            <Button size="small" variant="outlined" color="secondary">
-              Deletar
-            </Button>
+          <CardActions>
+            {props.children}
+
           </CardActions>
         </Grid>
       </Grid>
