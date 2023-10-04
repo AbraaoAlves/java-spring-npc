@@ -36,7 +36,7 @@ public class UsuariosController {
   }
 
   // http://localhost:8080/api/users/all
-  @GetMapping("/all")
+  @GetMapping()
   public ResponseEntity<Page<Usuario>> getAll(
       @PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
     
