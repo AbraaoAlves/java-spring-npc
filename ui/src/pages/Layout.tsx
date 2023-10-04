@@ -1,4 +1,4 @@
-import { Form, useNavigation, useLoaderData } from "react-router-dom";
+import { Form, useNavigation, useLoaderData, redirect } from "react-router-dom";
 import { UserList, UserListItem } from "../components/UserList/UserList";
 import ActiveNavLink from "../components/ActiveNavlink";
 import { Outlet } from "@mui/icons-material";
@@ -62,7 +62,4 @@ export default function Layout() {
 }
 
 
-function redirect(arg0: string) {
-  throw new Error("Function not implemented.");
-}
 
