@@ -1,0 +1,77 @@
+.loading-avatar svg{
+  position: fixed;
+  visibility: hidden;
+}
+.loading-avatar > :nth-child(1){
+  animation: 2s linear 1s infinite step1;
+}
+
+@keyframes step1 {
+  0% {
+      visibility: visible; 
+  }
+  25%{
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+
+.loading-avatar > :nth-child(2){
+  animation: 2s linear 1s infinite step2;
+}
+
+@keyframes step2 {
+  0% {
+      visibility: hidden; 
+  }
+  25%{
+    visibility: visible;
+  }
+  50%{
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.loading-avatar > :nth-child(3){
+  animation: 2s linear 1s infinite step3;
+}
+
+@keyframes step3 {
+  0% {
+    visibility: hidden; 
+  }
+  50%{
+    visibility: visible;
+  }
+  75%{
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.loading-avatar > :nth-child(4){
+  animation: 2s linear 1s infinite step4;
+}
+
+@keyframes step4 {
+  0% {
+      visibility: visible; 
+  }
+  25%{
+    visibility: hidden;
+  }
+  75%{
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}

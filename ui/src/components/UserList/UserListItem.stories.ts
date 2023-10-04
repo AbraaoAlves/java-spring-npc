@@ -11,6 +11,10 @@ const meta = {
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen',
+  },
+  args: {
+    selected: false,
+    loading: false
   }
 } satisfies Meta<typeof UserListItem>;
 

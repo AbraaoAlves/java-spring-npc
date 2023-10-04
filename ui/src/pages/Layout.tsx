@@ -1,12 +1,17 @@
-import { Form, useNavigation, useLoaderData, redirect } from "react-router-dom";
+import {
+  Form,
+  useNavigation,
+  useLoaderData,
+  redirect,
+  Outlet,
+  NavLink,
+} from "react-router-dom";
 import { UserList, UserListItem } from "../components/UserList/UserList";
-import ActiveNavLink from "../components/ActiveNavlink";
 import { AppBar } from "../components/AppBar/AppBar";
-import { Outlet } from "@mui/icons-material";
 import { createUsuario, getUsuarios, JavaPage, type Usuario } from "../api";
 import "./Layout.css";
 import Drawer from "@mui/material/Drawer";
-import { Box, Toolbar } from "@mui/material";
+import { Box, Container, Toolbar } from "@mui/material";
 
 Layout.loader = async () => getUsuarios();
 Layout.action = async () => {
@@ -20,7 +25,7 @@ export default function Layout() {
   const usuarios = data?.content;
 
   return (
-    <>
+    <Box sx={{ display: "flex" }}>
       <AppBar />
       <Drawer
         variant="permanent"
@@ -52,9 +57,16 @@ export default function Layout() {
             {usuarios?.length ? (
               <UserList>
                 {usuarios.map(({ id, name, email }) => (
-                  <ActiveNavLink to={`users/${id}`}>
-                    <UserListItem name={name} email={email} />
-                  </ActiveNavLink>
+                  <NavLink to={`users/${id}`} key={id}>
+                    {({ isActive, isPending }) => (
+                      <UserListItem
+                        selected={isActive}
+                        loading={isPending}
+                        name={name}
+                        email={email}
+                      />
+                    )}
+                  </NavLink>
                 ))}
               </UserList>
             ) : (
@@ -76,12 +88,17 @@ export default function Layout() {
           </Box>
         </div>
       </Drawer>
-      <div
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 3 }}
         id="detail"
         className={navigation.state === "loading" ? "loading" : ""}
       >
-        <Outlet />
-      </div>
-    </>
+        <Toolbar />
+        <Container>
+          <Outlet />
+        </Container>
+      </Box>
+    </Box>
   );
 }
