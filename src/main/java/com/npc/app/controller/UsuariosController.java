@@ -1,8 +1,6 @@
 package com.npc.app.controller;
 
 import java.util.Optional;
-import java.util.UUID;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -45,7 +43,7 @@ public class UsuariosController {
 
 
   @GetMapping("/{id}")
-  public ResponseEntity<Object> get(@PathVariable(value = "id") UUID id) {
+  public ResponseEntity<Object> get(@PathVariable(value = "id") int id) {
     Optional<Usuario> data = service.getById(id);
     
     if (!data.isPresent()) {
@@ -63,7 +61,7 @@ public class UsuariosController {
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<Object> update(@PathVariable(value = "id") UUID id, @RequestBody @Valid Usuario dto) {
+  public ResponseEntity<Object> update(@PathVariable(value = "id") int id, @RequestBody @Valid Usuario dto) {
     // validate fields
     if (!service.getById(id).isPresent()) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario not found.");
@@ -73,7 +71,7 @@ public class UsuariosController {
   }
 
   @DeleteMapping("/{id}")
-  public ResponseEntity<Object> delete(@PathVariable(value = "id") UUID id){
+  public ResponseEntity<Object> delete(@PathVariable(value = "id") int id){
     // validate if exist
 
     service.delete(id);

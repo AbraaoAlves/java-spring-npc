@@ -2,8 +2,6 @@ package com.npc.app.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -25,7 +23,7 @@ public class UsuariosService {
     return repo.save(model);
   }
   
-  public Optional<Usuario> getById(UUID id){
+  public Optional<Usuario> getById(int id){
     return repo.findById(id);
   }
   
@@ -38,7 +36,7 @@ public class UsuariosService {
   }
 
   @Transactional
-  public void delete(UUID id){
+  public void delete(int id){
     repo.deleteById(id);
   }
 
