@@ -25,12 +25,12 @@ export const UserListItem: React.FC<Props> = (props) => {
 }
 
 type ListProps = {
-  data: Array<Props>;
-}
-export const UserList: React.FC<ListProps> = (props) => {
-  return  <List  sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-    {props.data.map((user) =>
-      <UserListItem name={user.name} email={user.email} />
-    )}
+  children: React.ReactNode;
+  maxWidth?: number;
+};
+
+export const UserList: React.FC<ListProps> = ({maxWidth = 360, children}) => {
+  return  <List  sx={{ width: '100%', maxWidth: maxWidth, bgcolor: 'background.paper' }}>
+    {children}
   </List>
 }
