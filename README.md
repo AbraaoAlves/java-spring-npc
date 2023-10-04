@@ -66,7 +66,7 @@ These are APIs that Spring Boot App will export:
 | Methods |      Urls      | Actions                |
 |:--------|:---------------|:-----------------------|
 | POST    | /api/users     | create a new User      |
-| GET     | /api/users/all | paginated users        |
+| GET     | /api/users     | paginated users        |
 | GET     | /api/users/:id | retrieve a user by :id |
 | PUT     | /api/users/:id | update a user by :id   |
 | DELETE  | /api/users/:id | DELETE a user by :id   |
