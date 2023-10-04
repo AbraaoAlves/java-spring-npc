@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { UserList } from './UserList';
+import { UserList, UserListItem } from './UserList';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -24,19 +24,11 @@ export const Fullscreen: Story = {
     layout: 'fullscreen',
   },
   args: {
-    data: [
-      {
-        email: "abraao@mail.com",
-        name: "Abraão Alves"
-      },
-      {
-        email: "kilvia@mail.com",
-        name: "Kilvia Santos"
-      },
-      {
-        email: "sophia@mail.com",
-        name: "sophia Santos"
-      }
+    maxWidth: 360,
+    children: [
+      <UserListItem name="Abraao alves" email="abraao@mail.com" />,
+      <UserListItem name="Kilvia Santos" email="kilvia@mail.com" />,
+      <UserListItem name="Sophia santos" email="sophia@mail.com" />,
     ]
   }
 };

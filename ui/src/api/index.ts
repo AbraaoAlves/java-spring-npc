@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export type Usuario = {
   id: string;
-  name?: string;
+  name: string;
   email: string;
   password?: string;
   createdAt?: string;
