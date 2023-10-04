@@ -27,8 +27,8 @@ const router = createBrowserRouter([
       {
         path: "users/:userId/edit",
         element: <UsuarioForm />,
-        // loader: contactLoader,
-        // action: editAction
+        loader: UsuarioInfo.loader,
+        action: UsuarioForm.action
       },
       {
         path: "users/:userId/destroy",
