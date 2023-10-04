@@ -17,7 +17,7 @@ export async function getUsuario(id: string){
   return axios.get<Usuario>('/api/users/' + id)  
 }
 
-export async function createUsuario(user: Omit<Usuario, 'id'>){
+export async function createUsuario(user: Partial<Omit<Usuario, 'id'>>){
   return axios.post<Usuario>('/api/users/', user);
 }
 

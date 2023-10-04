@@ -14,7 +14,22 @@ const router = createBrowserRouter([
     element: <Layout/>,
     errorElement: <ErrorPage/>,
     children:[
-      {index: true, element: <Index/>}
+      {index: true, element: <Index/>},
+      {
+        path: "users/:userId",
+        // element: <User />,
+        // loader: contactLoader
+      },
+      {
+        path: "users/:userId/edit",
+        // element: <EditUser />,
+        // loader: contactLoader,
+        // action: editAction
+      },
+      {
+        path: "users/:userId/destroy",
+        // action: destroyAction,
+      },
     ]
   }
 ])
@@ -22,5 +37,3 @@ const router = createBrowserRouter([
 export default function App() {
   return <RouterProvider router={router} />
 }
-
-export default App

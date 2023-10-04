@@ -2,12 +2,14 @@ import { Form, useNavigation, useLoaderData } from "react-router-dom";
 import { UserList, UserListItem } from "../components/UserList/UserList";
 import ActiveNavLink from "../components/ActiveNavlink";
 import { Outlet } from "@mui/icons-material";
-import type { Usuario } from "../api";
+import { createUsuario, getUsuarios, type Usuario } from "../api";
 
-Layout.loader = () => {
+Layout.loader = async () => getUsuarios();
+Layout.action = async () => {
+  const {data} = await createUsuario({name: 'novo usuario'});
   
+  return redirect(`/users/${data.id}/edit`);
 }
-
 export default function Layout() {
 
   const usuarios = useLoaderData() as Array<Usuario>;
@@ -59,4 +61,8 @@ export default function Layout() {
   );
 }
 
+
+function redirect(arg0: string) {
+  throw new Error("Function not implemented.");
+}
 
