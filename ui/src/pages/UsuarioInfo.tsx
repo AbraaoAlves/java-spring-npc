@@ -1,10 +1,9 @@
 import { Form, useLoaderData, LoaderFunctionArgs } from "react-router-dom";
+import {Box, Button } from "@mui/material";
 
 import { UserCard } from "../components/UserCard/UserCard";
-import Button from "@mui/material/Button";
 import { Usuario, getUsuario } from "../api";
 import "./UsuarioInfo.css";
-import Box from "@mui/material/Box";
 
 type Props = LoaderFunctionArgs<{ userId: string }>;
 UsuarioInfo.loader = ({ params }: Props) => getUsuario(`${params.userId}`);
