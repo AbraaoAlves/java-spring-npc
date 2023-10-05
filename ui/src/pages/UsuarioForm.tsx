@@ -1,4 +1,4 @@
-import {Form, useLoaderData, ActionFunctionArgs, redirect} from "react-router-dom";
+import {Form, useLoaderData, ActionFunctionArgs, redirect, NavLink} from "react-router-dom";
 import { Usuario, updateUsuario } from "../api";
 import "./UsuarioForm.css";
 
@@ -48,7 +48,9 @@ export function UsuarioForm() {
       </label>
       <p>
         <button type="submit">Salvar</button>
-        <button type="button">Cancelar</button>
+        <NavLink to={"/users/" + user.id}>
+          <button type="button">Cancelar</button>
+        </NavLink>
       </p>
     </Form>
   );
