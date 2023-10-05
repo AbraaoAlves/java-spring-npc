@@ -18,7 +18,7 @@ export async function getUsuario(id: string) {
 }
 
 export async function createUsuario(user: Partial<Omit<Usuario, "id">>) {
-  return axios.post<Usuario>("/api/users/", user);
+  return axios.post<Usuario>("/api/users", user);
 }
 
 export async function updateUsuario(
