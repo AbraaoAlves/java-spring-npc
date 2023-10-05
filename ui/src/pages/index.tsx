@@ -1,8 +1,9 @@
+import imgUrl from '../assets/pexels-photo-583847.jpeg'
 
-export default function Index() {
-  return (
+export default function  Index() {
+  return (<div style={{background: 'url(' + imgUrl + ')'}}>
     <p id="zero-state">
-      Esse é o APP de Usuarios da NPC.
+      <h1>GESTÃO DE USUÁRIOS</h1>
       <br />
       <br />
       <br />
@@ -12,5 +13,7 @@ export default function Index() {
       </a>
       .
     </p>
+
+  </div>
   );
 }
