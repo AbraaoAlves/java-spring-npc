@@ -1,6 +1,7 @@
 package com.npc.app.controller;
 
 import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -57,7 +58,7 @@ public class UsuariosController {
   public ResponseEntity<Object> create(@RequestBody @Valid Usuario dto) {
     // validate fields
 
-    return ResponseEntity.status(HttpStatus.CREATED).body(service.save(dto));
+    return ResponseEntity.status(HttpStatus.CREATED).body(service.create(dto.getName()));
   }
 
   @PutMapping("/{id}")

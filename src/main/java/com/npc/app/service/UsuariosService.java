@@ -19,6 +19,13 @@ public class UsuariosService {
   }  
 
   @Transactional
+  public Usuario create(String name) {
+    Usuario model = new Usuario(name);
+    
+    return repo.save(model);
+  }
+  
+  @Transactional
   public Usuario save(Usuario model) {
     return repo.save(model);
   }

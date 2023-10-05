@@ -35,6 +35,9 @@ public class Usuario implements Serializable {
     
     /* Constructor. */
     public Usuario(){}
+    public Usuario(String name){
+        this.name = name;
+    }    
     public Usuario(String name, String email, String password) {
         this.name = name;
         this.email = email;

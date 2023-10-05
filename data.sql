@@ -25,7 +25,7 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.users (
-    id INTEGER NOT NULL,
+    id integer NOT NULL,
     created_at timestamp(6) without time zone,
     email character varying(255),
     name character varying(255),
@@ -35,6 +35,22 @@ CREATE TABLE public.users (
 
 
 ALTER TABLE public.users OWNER TO postgres;
+
+
+--
+-- Name: users_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.users_seq
+    START WITH 1
+    INCREMENT BY 50
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.users_seq OWNER TO postgres;
+
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -46,6 +62,13 @@ COPY public.users (id, created_at, email, name, password, updated_at) FROM stdin
 3	2023-09-28 00:37:17.980945	neydymar@mail.com	neydymar	123	2023-09-28 00:37:17.980965
 4	2023-09-28 00:37:36.91722	mail@mail.com	abraao	123	2023-09-28 00:37:36.917257
 \.
+
+--
+-- Name: users_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.users_seq', 301, true);
+
 
 --
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
