@@ -21,7 +21,6 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String name;
-    @Column(nullable = false, unique = true)
     private String email;
     private String password;
 

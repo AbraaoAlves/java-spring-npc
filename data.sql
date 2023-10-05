@@ -27,7 +27,7 @@ SET default_table_access_method = heap;
 CREATE TABLE public.users (
     id INTEGER NOT NULL,
     created_at timestamp(6) without time zone,
-    email character varying(255) NOT NULL,
+    email character varying(255),
     name character varying(255),
     password character varying(255),
     updated_at timestamp(6) without time zone
@@ -46,15 +46,6 @@ COPY public.users (id, created_at, email, name, password, updated_at) FROM stdin
 3	2023-09-28 00:37:17.980945	neydymar@mail.com	neydymar	123	2023-09-28 00:37:17.980965
 4	2023-09-28 00:37:36.91722	mail@mail.com	abraao	123	2023-09-28 00:37:36.917257
 \.
-
-
---
--- Name: users uk_6dotkott2kjsp8vw4d0m25fb7; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.users
-    ADD CONSTRAINT uk_6dotkott2kjsp8vw4d0m25fb7 UNIQUE (email);
-
 
 --
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
